@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: clamp(12px, 6vw, 32px);
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+:root {
+  --color1: rgb(112, 112, 112);
+  --color2: rgb(158, 158, 158);
+  --color3: hsl(240deg 7% 78%);
+  --text-shadow:
+      1px 1px 1px black,
+      -1px -1px 1px black,
+      1px -1px 1px black,
+      -1px 1px 1px black,
+      1px 0px 1px black,
+      -1px 0px 1px black,
+      0px -1px 1px black,
+      0px 1px 1px black;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+calc-frame {
+  display: flex;
+  flex-direction: column;
+  width: clamp(274px, 80vw, 500px);
+  height: auto;
+  background-color: var(--color1);
+  margin: auto auto;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 3px 3px 4px black;
+}
+
+calc-screen {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  width: 100%;
+  height: clamp(60px, 100%, 140px);
+  background-color: var(--color3);
+  text-align: right;
+  box-shadow: 2px 2px 2px black inset, -1px -1px 5px black inset;
+}
+
+calc-screen-top,
+calc-screen-bottom {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+  text-overflow: clip;
+  overflow: hidden;
+  min-height: 45px;
+}
+
+btn-grid {
+  padding-top: 8px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  align-items: center;
+  grid-template-areas: "btn-clear-all  btn-clear       btn-del         btn-abs" "btn-ceil       btn-floor       btn-round       btn-trunc" "btn-sqrt       btn-cbrt        btn-pow         btn-sign" "btn-sin        btn-cos         btn-tan         btn-func" "btn-log        btn-answer      btn-answer      btn-divide" "btn-neg        btn-open        btn-close       btn-multiply" "btn-7          btn-8           btn-9           btn-subtract" "btn-4          btn-5           btn-6           btn-add" "btn-1          btn-2           btn-3           btn-sum" "btn-0          btn-0           btn-decimal     btn-sum";
+}
+
+calc-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color2);
+  padding: 5px 0;
+  color: white;
+  box-shadow: 2px 2px 4px black;
+  border: 1px solid black;
+  border-radius: 2px;
+  text-shadow: var(--text-shadow);
+  height: 100%;
+}
+
+calc-btn:active:not(.disabled),
+calc-btn.simulated-click:not(.disabled) {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 4px black;
+  filter: brightness(80%);
+}
+
+calc-btn-text {
+  pointer-events: none;
+}
+
+.disabled {
+  filter: brightness(60%);
+  pointer-events: none;
+}
+
+.required {
+  color: red;
+}
+
+#btn-0 {
+  grid-area: btn-0;
+}
+
+#btn-1 {
+  grid-area: btn-1;
+}
+
+#btn-2 {
+  grid-area: btn-2;
+}
+
+#btn-3 {
+  grid-area: btn-3;
+}
+
+#btn-4 {
+  grid-area: btn-4;
+}
+
+#btn-5 {
+  grid-area: btn-5;
+}
+
+#btn-6 {
+  grid-area: btn-6;
+}
+
+#btn-7 {
+  grid-area: btn-7;
+}
+
+#btn-8 {
+  grid-area: btn-8;
+}
+
+#btn-9 {
+  grid-area: btn-9;
+}
+
+#btn-min {
+  grid-area: btn-min;
+}
+
+#btn-max {
+  grid-area: btn-max;
+}
+
+#btn-abs {
+  grid-area: btn-abs;
+}
+
+#btn-neg {
+  grid-area: btn-neg;
+}
+
+#btn-clear-all {
+  grid-area: btn-clear-all;
+}
+
+#btn-clear {
+  grid-area: btn-clear;
+}
+
+#btn-del {
+  grid-area: btn-del;
+}
+
+#btn-divide {
+  grid-area: btn-divide;
+}
+
+#btn-multiply {
+  grid-area: btn-multiply;
+}
+
+#btn-subtract {
+  grid-area: btn-subtract;
+}
+
+#btn-add {
+  grid-area: btn-add;
+}
+
+#btn-sum {
+  grid-area: btn-sum;
+}
+
+#btn-decimal {
+  grid-area: btn-decimal;
+}
+
+#btn-ceil {
+  grid-area: btn-ceil;
+}
+
+#btn-floor {
+  grid-area: btn-floor;
+}
+
+#btn-round {
+  grid-area: btn-round;
+}
+
+#btn-trunc {
+  grid-area: btn-trunc;
+}
+
+#btn-sqrt {
+  grid-area: btn-sqrt;
+}
+
+#btn-cbrt {
+  grid-area: btn-cbrt;
+}
+
+#btn-pow {
+  grid-area: btn-pow;
+}
+
+#btn-answer {
+  grid-area: btn-answer;
+}
+
+#btn-sin {
+  grid-area: btn-sin;
+}
+
+#btn-cos {
+  grid-area: btn-cos;
+}
+
+#btn-tan {
+  grid-area: btn-tan;
+}
+
+#btn-func {
+  grid-area: btn-func;
+}
+
+#btn-ain {
+  grid-area: btn-ain;
+}
+
+#btn-acos {
+  grid-area: btn-acos;
+}
+
+#btn-atan {
+  grid-area: btn-atan;
+}
+
+#btn-sign {
+  grid-area: btn-sign;
+}
+
+#btn-log {
+  grid-area: btn-log;
+}
+
+#btn-open {
+  grid-area: btn-open;
+}
+
+#btn-close {
+  grid-area: btn-close;
+}/*# sourceMappingURL=styles.css.map */
